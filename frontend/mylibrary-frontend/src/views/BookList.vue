@@ -7,11 +7,13 @@
       </li>
     </ul>
   </div>
+  <FormAddBook></FormAddBook>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
 import apiClient from '../services/api';
+import FormAddBook from "../components/FormAddBook.vue";
 
 interface Book {
   id: number;
@@ -21,6 +23,7 @@ interface Book {
 
 export default defineComponent({
   name: 'BookList',
+  components: {FormAddBook},
   setup() {
     const books = ref<Book[]>([]);
 
